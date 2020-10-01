@@ -9,6 +9,16 @@
    <children>
       <Label text="Primary View" />
       <Button fx:id="primaryButton" text="Switch to Secondary View" onAction="#switchToSecondary"/>
+      <Button fx:id="oneBtn" text="1" onAction="#switchToSecondary"/>
+      <Button fx:id="twoBtn" text="2" onAction="#switchToSecondary"/>
+      <Button fx:id="threeBtn" text="3" onAction="#switchToSecondary"/>
+      <Button fx:id="fourBtn" text="4" onAction="#switchToSecondary"/>
+      <Button fx:id="fiveBtn" text="5" onAction="#switchToSecondary"/>
+      <Button fx:id="sixBtn" text="6" onAction="#switchToSecondary"/>
+      <Button fx:id="sevenBtn" text="7" onAction="#switchToSecondary"/>
+      <Button fx:id="eightBtn" text="8" onAction="#switchToSecondary"/>
+      <Button fx:id="nineBtn" text="9" onAction="#switchToSecondary"/>
+      <Button fx:id="zeroBtn" text="0" onAction="#switchToSecondary"/>
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
