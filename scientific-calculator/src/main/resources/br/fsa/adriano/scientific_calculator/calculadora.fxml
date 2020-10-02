@@ -11,7 +11,9 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<!-- É especificado no VBox o controller que pertence esse FXML -->
+
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.fsa.adriano.scientific_calculator.CalculadoraController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
@@ -35,7 +37,7 @@
                <children>
                   <Button mnemonicParsing="false" prefHeight="99.0" prefWidth="210.0" text="2^nd">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -48,7 +50,7 @@
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="PI" GridPane.columnIndex="1">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -61,7 +63,7 @@
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="e" GridPane.columnIndex="2">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -72,9 +74,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="C" GridPane.columnIndex="3">
+                  <Button fx:id="limpa" mnemonicParsing="false" onAction="#apaga" prefHeight="49.0" prefWidth="150.0" text="C" GridPane.columnIndex="3">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -87,7 +89,7 @@
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="&lt;=" GridPane.columnIndex="4">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -100,7 +102,7 @@
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="x^2" GridPane.rowIndex="1">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -113,7 +115,7 @@
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="1/x" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -126,7 +128,7 @@
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="|x|" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -139,7 +141,7 @@
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="exp" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -150,9 +152,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="mod" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                  <Button mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="mod" GridPane.columnIndex="4" GridPane.rowIndex="1">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -165,7 +167,7 @@
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="raiz" GridPane.rowIndex="2">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -176,9 +178,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="(" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button fx:id="parentEsq" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="(" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -189,9 +191,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text=")" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Button fx:id="parentDir" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text=")" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -204,7 +206,7 @@
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="n!" GridPane.columnIndex="3" GridPane.rowIndex="2">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -215,9 +217,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="/" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                  <Button fx:id="divide" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="/" GridPane.columnIndex="4" GridPane.rowIndex="2">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -230,7 +232,7 @@
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="x^y" GridPane.rowIndex="3">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -241,9 +243,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="7" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <Button fx:id="btnSete" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="7" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial Bold" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -254,9 +256,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="8" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                  <Button fx:id="btnOito" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="8" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial Bold" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -267,9 +269,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="9" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                  <Button fx:id="btnNove" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="9" GridPane.columnIndex="3" GridPane.rowIndex="3">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial Bold" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -280,9 +282,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="*" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                  <Button fx:id="multiplica" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="*" GridPane.columnIndex="4" GridPane.rowIndex="3">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -295,7 +297,7 @@
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="10^x" GridPane.rowIndex="4">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -306,9 +308,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="4" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <Button fx:id="btnQuatro" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="4" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial Bold" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -319,9 +321,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="5" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                  <Button fx:id="btnCinco" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="5" GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial Bold" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -332,9 +334,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="6" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                  <Button fx:id="btnSeis" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="6" GridPane.columnIndex="3" GridPane.rowIndex="4">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial Bold" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -345,9 +347,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="-" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                  <Button fx:id="menos" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="-" GridPane.columnIndex="4" GridPane.rowIndex="4">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -360,7 +362,7 @@
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="log" GridPane.rowIndex="5">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -371,9 +373,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="1" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                  <Button fx:id="btnUm" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="1" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial Bold" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -384,9 +386,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="2" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                  <Button fx:id="btnDois" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="2" GridPane.columnIndex="2" GridPane.rowIndex="5">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial Bold" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -397,9 +399,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="3" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                  <Button fx:id="btnTres" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="3" GridPane.columnIndex="3" GridPane.rowIndex="5">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial Bold" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -410,9 +412,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="+" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                  <Button fx:id="mais" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="+" GridPane.columnIndex="4" GridPane.rowIndex="5">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -425,7 +427,7 @@
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="ln" GridPane.rowIndex="6">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -438,7 +440,7 @@
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="+/-" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -449,9 +451,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                  <Button fx:id="btnZero" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial Bold" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -462,9 +464,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="," GridPane.columnIndex="3" GridPane.rowIndex="6">
+                  <Button fx:id="btnVirgula" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="," GridPane.columnIndex="3" GridPane.rowIndex="6">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -475,9 +477,9 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="109.0" prefWidth="131.0" text="=" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                  <Button fx:id="igual" mnemonicParsing="false" onAction="#lerExpressao" prefHeight="109.0" prefWidth="131.0" text="=" GridPane.columnIndex="4" GridPane.rowIndex="6">
                      <font>
-                        <Font name="Times New Roman" size="24.0" />
+                        <Font name="Arial" size="24.0" />
                      </font>
                      <textFill>
                         <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
@@ -490,9 +492,9 @@
                   </Button>
                </children>
             </GridPane>
-            <TextField alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="580.0" promptText="0" text="0">
+            <TextField fx:id="campo" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="580.0" promptText="0" text="0">
                <font>
-                  <Font name="Times New Roman" size="48.0" />
+                  <Font name="Arial Italic" size="40.0" />
                </font>
             </TextField>
       </children>
