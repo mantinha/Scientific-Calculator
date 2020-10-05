@@ -1,6 +1,6 @@
 package br.fsa.adriano.scientific_calculator;
 
-public class Calculo {
+public class CalculadoraSimples {
 
 	private String operador;
 	private String a;
@@ -8,24 +8,19 @@ public class Calculo {
 	private String resultado;
 	private boolean inteiro;
 	
-	public Calculo(String a, String operador, String b) {		
+	public String opera(String a, String operador, String b) {		
 		this.a = a;
-		this.operador = operador;
 		this.b = b;
-		
+		this.operador = operador;
+				
 		verificaTipo();
 		verificaOperacao();
-	}
-	
-	public Calculo(String operador, String b) {
-		this.operador = operador;
-		this.b = b;
 		
-		setResultado(b);
+		return getResultado();
 	}
-	
+
 	private void verificaTipo() {
-		if(getA().contains(",") || getB().contains(","))
+		if(a.contains(",") || b.contains(","))
 			setInteiro(false);
 		else
 			setInteiro(true);
@@ -56,7 +51,7 @@ public class Calculo {
 		this.operador = operador;
 	}
 
-	public String getA() {
+	private String getA() {
 		return a;
 	}
 
@@ -64,7 +59,7 @@ public class Calculo {
 		this.a = a;
 	}
 
-	public String getB() {
+	private String getB() {
 		return b;
 	}
 
@@ -72,7 +67,7 @@ public class Calculo {
 		this.b = b;
 	}
 
-	public String getResultado() {
+	private String getResultado() {
 		return resultado;
 	}
 

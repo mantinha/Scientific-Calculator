@@ -34,7 +34,7 @@ public class Principal extends Application {
      * @param args
      */
     public static void main(String[] args) {
-        launch();        
+        launch();
     }    
     
     /**

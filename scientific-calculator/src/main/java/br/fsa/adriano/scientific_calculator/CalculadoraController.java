@@ -131,39 +131,24 @@ public class CalculadoraController {
 	}
 	
 	/**
-	 * Realiza a calculo da expressao contida no campo
+	 * Processa todas as operações contendo parênteses
+	 * Filtra o texto separando os operadores do operando
+	 * @param x = contador
+	 * @param y = quantidade de operandos
+	 * @param z = quantidade de operadores  
 	 */
 	@FXML
 	private void lerExpressao() {
-		String[] operador = {"","","","","","","",""};
-		String[] operando = {"","","","","","","",""};
 		
-		char[] caractere = campo.getText().toCharArray();
+//		ResolvePrioridade prioridade = new ResolvePrioridade(campo.getText());
+//		if(prioridade.getQuantidade() > 0 ) {			
+//			campo.setText(prioridade.resolve());
+//		}
 		
-		int y = 0, z = 0;
-		for(int x = 0; x < caractere.length; x++) {
-			if (caractere[x] >= '0' && caractere[x] <= '9' || caractere[x] == ',') {
-				operando[y] += caractere[x];				
-			}else if(caractere[x] == '+' || caractere[x] == '-' || 
-					 caractere[x] == '/' || caractere[x] == '*') {
-				y++;
-				operador[z] += caractere[x];
-				z++;
-			}
+		Gerencia gerencia = new Gerencia(campo.getText());
+		if(gerencia.getQuantidade() > 0 ) {
+			campo.setText(gerencia.resolver().substring(1));
 		}
-		
-		Calculo calculo;
-		/**
-		 * Fazer o calc da direita pra esquerda
-		 */
-		y = 0;
-		for(int x = 0; x <= Math.floor((z / 2) + 1); x += 2) {
-			calculo = new Calculo(operando[x], operador[y], operando[x+1]);
-			System.out.println("z = " + z + " z calc = " + Math.floor((z / 2) + 1));
-			System.out.println("Res: " + calculo.getResultado());
-			y++;
-		}
-		
 	}
 	
 }
