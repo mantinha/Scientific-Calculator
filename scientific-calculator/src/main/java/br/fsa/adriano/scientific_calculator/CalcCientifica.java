@@ -17,4 +17,9 @@ public class CalcCientifica {
 		return Math.tan(angulo);
 	}
 	
+	public double logaritmo(double logaritmando) {		
+		System.out.println("logaritmo: logaritmando = " + logaritmando);
+		return Math.log10(logaritmando);
+	}
+	
 }

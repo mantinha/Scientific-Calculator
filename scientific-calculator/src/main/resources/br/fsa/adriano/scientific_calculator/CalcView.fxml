@@ -361,7 +361,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="log" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                  <Button fx:id="btnLog" mnemonicParsing="false" onAction="#calculaLogaritmo" prefHeight="49.0" prefWidth="150.0" text="log" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <font>
                         <Font name="Arial" size="24.0" />
                      </font>

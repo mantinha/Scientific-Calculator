@@ -116,6 +116,9 @@ public class CalcController {
     @FXML
     private Button btnTangente;
     
+    @FXML
+    private Button btnLog;
+    
     /**
      * Metodo utilitario
 	 * Reseta todo o campo da calculadora para '0'
@@ -387,6 +390,18 @@ public class CalcController {
 		
 		CalcCientifica calculadora = new CalcCientifica();
 		String resultado = String.valueOf( calculadora.tangente( Double.valueOf( campo.getText() ) ) );
+		
+		if(resultado.contains(".0"))
+			resultado = resultado.replaceAll(".0", "");
+		campo.setText( resultado );
+		
+	}
+	
+	@FXML
+	private void calculaLogaritmo() {
+		
+		CalcCientifica calculadora = new CalcCientifica();
+		String resultado = String.valueOf( calculadora.logaritmo( Double.valueOf( campo.getText() ) ) );
 		
 		if(resultado.contains(".0"))
 			resultado = resultado.replaceAll(".0", "");
