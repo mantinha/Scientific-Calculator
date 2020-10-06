@@ -31,6 +31,9 @@ public class CalcController {
 	
 	@FXML
     private Button btnVoltar;
+	
+	@FXML
+    private Button btnSimetria;
 
     @FXML
     private Button parentEsq;
@@ -93,7 +96,7 @@ public class CalcController {
     private Button btnRaiz;
     
     @FXML
-    private Button btnDenominar;
+    private Button btnInverso;
     
     @FXML
     private Button btnFatorial;
@@ -103,6 +106,15 @@ public class CalcController {
     
     @FXML
     private Button btnResto;
+    
+    @FXML
+    private Button btnSeno;
+    
+    @FXML
+    private Button btnCosseno;
+    
+    @FXML
+    private Button btnTangente;
     
     /**
      * Metodo utilitario
@@ -121,6 +133,21 @@ public class CalcController {
 	private void voltar() {
 		if(campo.getText().length() != 1)
 			campo.setText(campo.getText().substring(0, campo.getText().length() - 1));		
+	}
+	
+	/**
+     * Metodo utilitario
+	 * Altera sinal positivo e negativo
+	 */
+	@FXML
+	private void simetria() {
+		if(campo.getText().charAt(0) == '0') {			
+		}else if(campo.getText().charAt(0) == '-')
+			campo.setText(campo.getText().replace('-', '+'));
+		else if(campo.getText().charAt(0) == '+')
+			campo.setText(campo.getText().replace('+', '-'));
+		else
+			campo.setText("-" + campo.getText());
 	}
 	
 	@FXML
@@ -293,7 +320,7 @@ public class CalcController {
 	}
 	
 	@FXML
-	private void denominar() {
+	private void inverso() {
 		
 		CalcSimples calculadora = new CalcSimples();
 		String resultado = String.valueOf( calculadora.dividir( 1.0, Double.valueOf( campo.getText() ) ) );
@@ -328,6 +355,42 @@ public class CalcController {
 		
 		if(campo.getText().length() > 0 && campo.getText().charAt( campo.getText().length() - 1 ) != 'm')
 			campo.setText(campo.getText() + "m");
+		
+	}
+	
+	@FXML
+	private void calculaSeno() {
+		
+		CalcCientifica calculadora = new CalcCientifica();
+		String resultado = String.valueOf( calculadora.seno( Double.valueOf( campo.getText() ) ) );
+		
+		if(resultado.contains(".0"))
+			resultado = resultado.replaceAll(".0", "");
+		campo.setText( resultado );
+		
+	}
+	
+	@FXML
+	private void calculaCosseno() {
+		
+		CalcCientifica calculadora = new CalcCientifica();
+		String resultado = String.valueOf( calculadora.cosseno( Double.valueOf( campo.getText() ) ) );
+		
+		if(resultado.contains(".0"))
+			resultado = resultado.replaceAll(".0", "");
+		campo.setText( resultado );
+		
+	}
+	
+	@FXML
+	private void calculaTangente() {
+		
+		CalcCientifica calculadora = new CalcCientifica();
+		String resultado = String.valueOf( calculadora.tangente( Double.valueOf( campo.getText() ) ) );
+		
+		if(resultado.contains(".0"))
+			resultado = resultado.replaceAll(".0", "");
+		campo.setText( resultado );
 		
 	}
 	
