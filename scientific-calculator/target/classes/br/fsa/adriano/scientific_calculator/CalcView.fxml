@@ -13,7 +13,7 @@
 
 <!-- É especificado no VBox o controller que pertence esse FXML -->
 
-<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.fsa.adriano.scientific_calculator.CalculadoraController">
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.fsa.adriano.scientific_calculator.CalcController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
@@ -87,7 +87,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="&lt;=" GridPane.columnIndex="4">
+                  <Button fx:id="btnVoltar" mnemonicParsing="false" onAction="#voltar" prefHeight="49.0" prefWidth="150.0" text="&lt;=" GridPane.columnIndex="4">
                      <font>
                         <Font name="Arial" size="24.0" />
                      </font>
@@ -152,7 +152,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="mod" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                  <Button fx:id="btnResto" mnemonicParsing="false" onAction="#resto" prefHeight="49.0" prefWidth="150.0" text="mod" GridPane.columnIndex="4" GridPane.rowIndex="1">
                      <font>
                         <Font name="Arial" size="24.0" />
                      </font>
@@ -204,7 +204,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="n!" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                  <Button fx:id="btnFatorial" mnemonicParsing="false" onAction="#fatorial" prefHeight="49.0" prefWidth="150.0" text="n!" GridPane.columnIndex="3" GridPane.rowIndex="2">
                      <font>
                         <Font name="Arial" size="24.0" />
                      </font>
@@ -230,7 +230,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="x^y" GridPane.rowIndex="3">
+                  <Button fx:id="btnPotencia" mnemonicParsing="false" onAction="#elevadoA" prefHeight="49.0" prefWidth="150.0" text="x^y" GridPane.rowIndex="3">
                      <font>
                         <Font name="Arial" size="24.0" />
                      </font>
@@ -464,7 +464,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="btnVirgula" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="," GridPane.columnIndex="3" GridPane.rowIndex="6">
+                  <Button fx:id="btnPonto" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="." GridPane.columnIndex="3" GridPane.rowIndex="6">
                      <font>
                         <Font name="Arial" size="24.0" />
                      </font>

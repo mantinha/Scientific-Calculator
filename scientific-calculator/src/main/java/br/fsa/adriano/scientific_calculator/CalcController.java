@@ -22,9 +22,9 @@ import javafx.event.ActionEvent;
  * @author adriano 737679
  *
  */
-public class CalculadoraController {    
+public class CalcController {    
     
-	private boolean virgula;
+	private boolean ponto;
 	
 	@FXML
     private TextField campo;
@@ -69,7 +69,7 @@ public class CalculadoraController {
     private Button btnZero;
     
     @FXML
-    private Button btnVirgula;
+    private Button btnPonto;
     
     @FXML
     private Button mais;
@@ -86,12 +86,24 @@ public class CalculadoraController {
     @FXML
     private Button igual;
     
-    private boolean isVirgula() {
-    	return virgula;
+    @FXML
+    private Button btnFatorial;
+    
+    @FXML
+    private Button btnPotencia;
+    
+    @FXML
+    private Button btnResto;
+    
+    @FXML
+    private Button btnVoltar;
+    
+    private boolean isPonto() {
+    	return ponto;
     }
     
-    private void setVirgula(boolean virgula) {
-    	this.virgula = virgula;
+    private void setPonto(boolean ponto) {
+    	this.ponto = ponto;
     }
     
     /**
@@ -105,19 +117,19 @@ public class CalculadoraController {
 		if(campo.getText().equals("0"))
 			campo.setText("");
 		
-		if(!isVirgula() && evento.toString().charAt(evento.toString().length()-3) != ',')
+		if(!isPonto() && evento.toString().charAt(evento.toString().length()-3) != '.')
 			campo.setText(campo.getText() + evento.toString().charAt(evento.toString().length()-3));
-		else if(!isVirgula() && evento.toString().charAt(evento.toString().length()-3) == ',') {
+		else if(!isPonto() && evento.toString().charAt(evento.toString().length()-3) == '.') {
 			campo.setText(campo.getText() + evento.toString().charAt(evento.toString().length()-3));
-			setVirgula(true);
-		}else if(isVirgula() && evento.toString().charAt(evento.toString().length()-3) != ',')
+			setPonto(true);
+		}else if(isPonto() && evento.toString().charAt(evento.toString().length()-3) != '.')
 			campo.setText(campo.getText() + evento.toString().charAt(evento.toString().length()-3));
 		
 		if(	evento.toString().charAt(evento.toString().length()-3) == '+' ||
 			evento.toString().charAt(evento.toString().length()-3) == '-' ||
 			evento.toString().charAt(evento.toString().length()-3) == '*' ||
 			evento.toString().charAt(evento.toString().length()-3) == '/')
-			setVirgula(false);
+			setPonto(false);
 	}
 	
 	/**
@@ -127,7 +139,12 @@ public class CalculadoraController {
 	@FXML
 	private void apaga() {		
 		campo.setText("0");
-		setVirgula(false);
+		setPonto(false);
+	}
+	
+	@FXML
+	private void voltar() {		
+		campo.setText(campo.getText().substring(0, campo.getText().length() - 1));		
 	}
 	
 	/**
@@ -140,15 +157,38 @@ public class CalculadoraController {
 	@FXML
 	private void lerExpressao() {
 		
-//		ResolvePrioridade prioridade = new ResolvePrioridade(campo.getText());
-//		if(prioridade.getQuantidade() > 0 ) {			
-//			campo.setText(prioridade.resolve());
-//		}
+		Expressao expressao = new Expressao(campo.getText());		
+		campo.setText(expressao.controlar());
 		
-		Gerencia gerencia = new Gerencia(campo.getText());
-		if(gerencia.getQuantidade() > 0 ) {
-			campo.setText(gerencia.resolver().substring(1));
+	}
+	
+	/**
+	 * Calcula o fatorial de um número
+	 * IMPLEMENTAR EM UMA NOVA CLASSE
+	 */
+	@FXML
+	private void fatorial() {
+		double numero = Double.valueOf(campo.getText());
+		double resultado = numero;
+		if(resultado == 0) {
+			resultado++;
 		}
+		while(numero > 1 && numero < 999999999) {
+			resultado *= --numero;
+		}
+		campo.setText(String.valueOf(resultado));
+	}
+	
+	@FXML
+	private void elevadoA() {
+		if(!campo.getText().contains("^"))
+			campo.setText(campo.getText() + "^");
+	}
+	
+	@FXML
+	private void resto() {
+		if(!campo.getText().contains("mod"))
+			campo.setText(campo.getText().concat("mod"));
 	}
 	
 }

@@ -21,7 +21,7 @@ import java.io.IOException;
  * @author adriano 737679
  *
  */
-public class Principal extends Application {
+public class CalcPrincipal extends Application {
 
 	/**
 	 * A classe principal precisa de um container(conteudo) que vai receber todos os
@@ -46,7 +46,7 @@ public class Principal extends Application {
      */
     @Override
     public void start(Stage janela) throws IOException {
-        conteudo = new Scene(loadFXML("calculadora"), 600, 400);
+        conteudo = new Scene(loadFXML("CalcView"), 600, 400);
         janela.setTitle("Calculadora");
         janela.setScene(conteudo);
         janela.show();
@@ -59,14 +59,8 @@ public class Principal extends Application {
      * @throws IOException (Passível de dar erro de entrada e saída de arquivo)
      */
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Principal.class.getResource(fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(CalcPrincipal.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
-/**
- * Método público que altera a view
- */
-//    static void setRoot(String fxml) throws IOException {
-//        conteudo.setRoot(loadFXML(fxml));
-//    }
 
 }
