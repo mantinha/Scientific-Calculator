@@ -20,7 +20,7 @@ public class Expressao {
 		calculadora = new CalcSimples();
 	}
 	
-	public String controlar() {
+	public String priorizar() {
 		int contas = 0;		
 		/**
 		 * Define quantidade de contas à realizar

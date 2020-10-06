@@ -74,7 +74,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="limpa" mnemonicParsing="false" onAction="#apaga" prefHeight="49.0" prefWidth="150.0" text="C" GridPane.columnIndex="3">
+                  <Button fx:id="btnApagar" mnemonicParsing="false" onAction="#apagar" prefHeight="49.0" prefWidth="150.0" text="C" GridPane.columnIndex="3">
                      <font>
                         <Font name="Arial" size="24.0" />
                      </font>
@@ -100,7 +100,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="x^2" GridPane.rowIndex="1">
+                  <Button fx:id="btnPotenciaDeDois" mnemonicParsing="false" onAction="#potenciaDeDois" prefHeight="49.0" prefWidth="150.0" text="x^2" GridPane.rowIndex="1">
                      <font>
                         <Font name="Arial" size="24.0" />
                      </font>
@@ -113,7 +113,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="1/x" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button fx:id="btnDenominar" mnemonicParsing="false" onAction="#denominar" prefHeight="49.0" prefWidth="150.0" text="1/x" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="Arial" size="24.0" />
                      </font>
@@ -165,7 +165,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="150.0" text="raiz" GridPane.rowIndex="2">
+                  <Button fx:id="btnRaiz" mnemonicParsing="false" onAction="#raizQuadrada" prefHeight="49.0" prefWidth="150.0" text="raiz" GridPane.rowIndex="2">
                      <font>
                         <Font name="Arial" size="24.0" />
                      </font>
@@ -178,7 +178,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="parentEsq" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="(" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button fx:id="parentEsq" mnemonicParsing="false" onAction="#abrirParenteses" prefHeight="49.0" prefWidth="150.0" text="(" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font name="Arial" size="24.0" />
                      </font>
@@ -191,7 +191,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="parentDir" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text=")" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Button fx:id="parentDir" mnemonicParsing="false" onAction="#fecharParenteses" prefHeight="49.0" prefWidth="150.0" text=")" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font name="Arial" size="24.0" />
                      </font>
@@ -217,19 +217,6 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="divide" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="/" GridPane.columnIndex="4" GridPane.rowIndex="2">
-                     <font>
-                        <Font name="Arial" size="24.0" />
-                     </font>
-                     <textFill>
-                        <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
-                           <stops>
-                              <Stop color="BLACK" />
-                              <Stop color="#0542a4" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </textFill>
-                  </Button>
                   <Button fx:id="btnPotencia" mnemonicParsing="false" onAction="#elevadoA" prefHeight="49.0" prefWidth="150.0" text="x^y" GridPane.rowIndex="3">
                      <font>
                         <Font name="Arial" size="24.0" />
@@ -243,7 +230,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="btnSete" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="7" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <Button fx:id="btnSete" mnemonicParsing="false" onAction="#escreverSete" prefHeight="49.0" prefWidth="150.0" text="7" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -256,7 +243,20 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="btnOito" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="8" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                  <Button fx:id="btnDivide" mnemonicParsing="false" onAction="#escreverDivisao" prefHeight="49.0" prefWidth="150.0" text="/" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial" size="24.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="0.6539508731228778" endY="0.7411444079973393">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="#0542a4" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Button>
+                  <Button fx:id="btnOito" mnemonicParsing="false" onAction="#escreverOito" prefHeight="49.0" prefWidth="150.0" text="8" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -269,7 +269,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="btnNove" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="9" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                  <Button fx:id="btnNove" mnemonicParsing="false" onAction="#escreverNove" prefHeight="49.0" prefWidth="150.0" text="9" GridPane.columnIndex="3" GridPane.rowIndex="3">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -282,7 +282,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="multiplica" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="*" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                  <Button fx:id="btnMultiplica" mnemonicParsing="false" onAction="#escreverMultiplicacao" prefHeight="49.0" prefWidth="150.0" text="*" GridPane.columnIndex="4" GridPane.rowIndex="3">
                      <font>
                         <Font name="Arial" size="24.0" />
                      </font>
@@ -308,7 +308,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="btnQuatro" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="4" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <Button fx:id="btnQuatro" mnemonicParsing="false" onAction="#escreverQuatro" prefHeight="49.0" prefWidth="150.0" text="4" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -321,7 +321,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="btnCinco" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="5" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                  <Button fx:id="btnCinco" mnemonicParsing="false" onAction="#escreverCinco" prefHeight="49.0" prefWidth="150.0" text="5" GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -334,7 +334,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="btnSeis" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="6" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                  <Button fx:id="btnSeis" mnemonicParsing="false" onAction="#escreverSeis" prefHeight="49.0" prefWidth="150.0" text="6" GridPane.columnIndex="3" GridPane.rowIndex="4">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -347,7 +347,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="menos" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="-" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                  <Button fx:id="btnMenos" mnemonicParsing="false" onAction="#escreverSubtracao" prefHeight="49.0" prefWidth="150.0" text="-" GridPane.columnIndex="4" GridPane.rowIndex="4">
                      <font>
                         <Font name="Arial" size="24.0" />
                      </font>
@@ -373,7 +373,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="btnUm" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="1" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                  <Button fx:id="btnUm" mnemonicParsing="false" onAction="#escreverUm" prefHeight="49.0" prefWidth="150.0" text="1" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -386,7 +386,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="btnDois" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="2" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                  <Button fx:id="btnDois" mnemonicParsing="false" onAction="#escreverDois" prefHeight="49.0" prefWidth="150.0" text="2" GridPane.columnIndex="2" GridPane.rowIndex="5">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -399,7 +399,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="btnTres" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="3" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                  <Button fx:id="btnTres" mnemonicParsing="false" onAction="#escreverTres" prefHeight="49.0" prefWidth="150.0" text="3" GridPane.columnIndex="3" GridPane.rowIndex="5">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -412,7 +412,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="mais" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="+" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                  <Button fx:id="btnMais" mnemonicParsing="false" onAction="#escreverSoma" prefHeight="49.0" prefWidth="150.0" text="+" GridPane.columnIndex="4" GridPane.rowIndex="5">
                      <font>
                         <Font name="Arial" size="24.0" />
                      </font>
@@ -451,7 +451,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="btnZero" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                  <Button fx:id="btnZero" mnemonicParsing="false" onAction="#escreverZero" prefHeight="49.0" prefWidth="150.0" text="0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -464,7 +464,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="btnPonto" mnemonicParsing="false" onAction="#mapeiaBotao" prefHeight="49.0" prefWidth="150.0" text="." GridPane.columnIndex="3" GridPane.rowIndex="6">
+                  <Button fx:id="btnPonto" mnemonicParsing="false" onAction="#escreverPonto" prefHeight="49.0" prefWidth="150.0" text="." GridPane.columnIndex="3" GridPane.rowIndex="6">
                      <font>
                         <Font name="Arial" size="24.0" />
                      </font>
@@ -477,7 +477,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="igual" mnemonicParsing="false" onAction="#lerExpressao" prefHeight="109.0" prefWidth="131.0" text="=" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                  <Button fx:id="btnIgual" mnemonicParsing="false" onAction="#lerExpressao" prefHeight="109.0" prefWidth="131.0" text="=" GridPane.columnIndex="4" GridPane.rowIndex="6">
                      <font>
                         <Font name="Arial" size="24.0" />
                      </font>

@@ -10,7 +10,6 @@ package br.fsa.adriano.scientific_calculator;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.event.ActionEvent;
 
 /**
  * O controller mapeia os atributos e métodos pela annotation @FXML ver (F*)
@@ -22,15 +21,16 @@ import javafx.event.ActionEvent;
  * @author adriano 737679
  *
  */
-public class CalcController {    
-    
-	private boolean ponto;
+public class CalcController {
 	
 	@FXML
     private TextField campo;
 	
-    @FXML
-    private Button limpa;
+	@FXML
+    private Button btnApagar;
+	
+	@FXML
+    private Button btnVoltar;
 
     @FXML
     private Button parentEsq;
@@ -72,19 +72,28 @@ public class CalcController {
     private Button btnPonto;
     
     @FXML
-    private Button mais;
+    private Button btnMais;
     
     @FXML
-    private Button menos;
+    private Button btnMenos;
     
     @FXML
-    private Button multiplica;
+    private Button btnMultiplica;
     
     @FXML
-    private Button divide;
+    private Button btnDivide;
     
     @FXML
-    private Button igual;
+    private Button btnIgual;
+    
+    @FXML
+    private Button btnPotenciaDeDois;
+    
+    @FXML
+    private Button btnRaiz;
+    
+    @FXML
+    private Button btnDenominar;
     
     @FXML
     private Button btnFatorial;
@@ -95,100 +104,231 @@ public class CalcController {
     @FXML
     private Button btnResto;
     
-    @FXML
-    private Button btnVoltar;
-    
-    private boolean isPonto() {
-    	return ponto;
-    }
-    
-    private void setPonto(boolean ponto) {
-    	this.ponto = ponto;
-    }
-    
     /**
-     * Se o campo conter somente '0' o campo é limpo para escrita
-     * O método escreve e controla para que somente uma vírgula seja escrita
-     * por operando
-     * @param evento
-     */
+     * Metodo utilitario
+	 * Reseta todo o campo da calculadora para '0'
+	 */
 	@FXML
-	private void mapeiaBotao(ActionEvent evento) {
+	private void apagar() {		
+		campo.setText("0");
+	}
+	
+	/**
+     * Metodo utilitario
+	 * Deleta ultimo caractere até sobrar 1
+	 */
+	@FXML
+	private void voltar() {
+		if(campo.getText().length() != 1)
+			campo.setText(campo.getText().substring(0, campo.getText().length() - 1));		
+	}
+	
+	@FXML
+	private void abrirParenteses() {
 		if(campo.getText().equals("0"))
 			campo.setText("");
 		
-		if(!isPonto() && evento.toString().charAt(evento.toString().length()-3) != '.')
-			campo.setText(campo.getText() + evento.toString().charAt(evento.toString().length()-3));
-		else if(!isPonto() && evento.toString().charAt(evento.toString().length()-3) == '.') {
-			campo.setText(campo.getText() + evento.toString().charAt(evento.toString().length()-3));
-			setPonto(true);
-		}else if(isPonto() && evento.toString().charAt(evento.toString().length()-3) != '.')
-			campo.setText(campo.getText() + evento.toString().charAt(evento.toString().length()-3));
+		campo.setText(campo.getText() + "(");		
+	}
+	
+	@FXML
+	private void fecharParenteses() {
+		if(campo.getText().equals("0"))
+			campo.setText("");
 		
-		if(	evento.toString().charAt(evento.toString().length()-3) == '+' ||
-			evento.toString().charAt(evento.toString().length()-3) == '-' ||
-			evento.toString().charAt(evento.toString().length()-3) == '*' ||
-			evento.toString().charAt(evento.toString().length()-3) == '/')
-			setPonto(false);
-	}
-	
-	/**
-	 * Substitui todo o campo da calculadora para '0'
-	 * Reseta o controle de vírgula
-	 */
-	@FXML
-	private void apaga() {		
-		campo.setText("0");
-		setPonto(false);
+		campo.setText(campo.getText() + ")");		
 	}
 	
 	@FXML
-	private void voltar() {		
-		campo.setText(campo.getText().substring(0, campo.getText().length() - 1));		
+	private void escreverUm() {
+		if(campo.getText().equals("0"))
+			campo.setText("");
+	
+		campo.setText(campo.getText() + "1");		
+	}
+	
+	@FXML
+	private void escreverDois() {
+		if(campo.getText().equals("0"))
+			campo.setText("");
+
+		campo.setText(campo.getText() + "2");		
+	}
+	
+	@FXML
+	private void escreverTres() {
+		if(campo.getText().equals("0"))
+			campo.setText("");
+
+		campo.setText(campo.getText() + "3");		
+	}
+	
+	@FXML
+	private void escreverQuatro() {
+		if(campo.getText().equals("0"))
+			campo.setText("");
+
+		campo.setText(campo.getText() + "4");		
+	}
+	
+	@FXML
+	private void escreverCinco() {
+		if(campo.getText().equals("0"))
+			campo.setText("");
+
+		campo.setText(campo.getText() + "5");		
+	}
+	
+	@FXML
+	private void escreverSeis() {
+		if(campo.getText().equals("0"))
+			campo.setText("");
+
+		campo.setText(campo.getText() + "6");		
+	}
+	
+	@FXML
+	private void escreverSete() {
+		if(campo.getText().equals("0"))
+			campo.setText("");
+
+		campo.setText(campo.getText() + "7");		
+	}
+	
+	@FXML
+	private void escreverOito() {
+		if(campo.getText().equals("0"))
+			campo.setText("");
+
+		campo.setText(campo.getText() + "8");		
+	}
+	
+	@FXML
+	private void escreverNove() {
+		if(campo.getText().equals("0"))
+			campo.setText("");
+
+		campo.setText(campo.getText() + "9");		
+	}
+	
+	@FXML
+	private void escreverZero() {
+		if(campo.getText().equals("0"))
+			campo.setText("");
+
+		campo.setText(campo.getText() + "0");		
+	}
+	
+	@FXML
+	private void escreverSoma() {
+		if(campo.getText().equals("0"))
+			campo.setText("");
+
+		campo.setText(campo.getText() + "+");		
+	}
+	
+	@FXML
+	private void escreverSubtracao() {
+		if(campo.getText().equals("0"))
+			campo.setText("");
+
+		campo.setText(campo.getText() + "-");		
+	}
+	
+	@FXML
+	private void escreverMultiplicacao() {
+		if(campo.getText().equals("0"))
+			campo.setText("");
+
+		campo.setText(campo.getText() + "*");		
+	}
+	
+	@FXML
+	private void escreverDivisao() {
+		if(campo.getText().equals("0"))
+			campo.setText("");
+
+		campo.setText(campo.getText() + "/");		
+	}
+	
+	@FXML
+	private void escreverPonto() {
+		if(campo.getText().length() > 0 && campo.getText().charAt( campo.getText().length() - 1 ) != '.')
+			campo.setText(campo.getText() + ".");		
 	}
 	
 	/**
-	 * Processa todas as operações contendo parênteses
-	 * Filtra o texto separando os operadores do operando
-	 * @param x = contador
-	 * @param y = quantidade de operandos
-	 * @param z = quantidade de operadores  
+	 * Processa todas as operações aritmeticas  
 	 */
 	@FXML
 	private void lerExpressao() {
 		
 		Expressao expressao = new Expressao(campo.getText());		
-		campo.setText(expressao.controlar());
+		campo.setText(expressao.priorizar());
+		
+	}
+	
+	@FXML
+	private void potenciaDeDois() {
+		
+		CalcSimples calculadora = new CalcSimples();
+		String resultado = String.valueOf( calculadora.potencializar( Double.valueOf( campo.getText() ) ) );
+		
+		if(resultado.contains(".0"))
+			resultado = resultado.replaceAll(".0", "");
+		campo.setText( resultado );
+		
+	}
+	
+	@FXML
+	private void raizQuadrada() {
+		
+		CalcSimples calculadora = new CalcSimples();
+		String resultado = String.valueOf( calculadora.radicalizar( Double.valueOf( campo.getText() ) ) );
+		
+		if(resultado.contains(".0"))
+			resultado = resultado.replaceAll(".0", "");
+		campo.setText( resultado );
+		
+	}
+	
+	@FXML
+	private void denominar() {
+		
+		CalcSimples calculadora = new CalcSimples();
+		String resultado = String.valueOf( calculadora.dividir( 1.0, Double.valueOf( campo.getText() ) ) );
+		
+		if(resultado.contains(".0"))
+			resultado = resultado.replaceAll(".0", "");
+		campo.setText( resultado );
 		
 	}
 	
 	/**
 	 * Calcula o fatorial de um número
-	 * IMPLEMENTAR EM UMA NOVA CLASSE
 	 */
 	@FXML
 	private void fatorial() {
-		double numero = Double.valueOf(campo.getText());
-		double resultado = numero;
-		if(resultado == 0) {
-			resultado++;
-		}
-		while(numero > 1 && numero < 999999999) {
-			resultado *= --numero;
-		}
-		campo.setText(String.valueOf(resultado));
+		
+		CalcSimples calculadora = new CalcSimples();
+		campo.setText( String.valueOf( calculadora.fatorar( Double.valueOf( campo.getText() ) ) ) );
+		
 	}
 	
 	@FXML
 	private void elevadoA() {
-		if(!campo.getText().contains("^"))
+		
+		if(campo.getText().length() > 0 && campo.getText().charAt( campo.getText().length() - 1 ) != '^')
 			campo.setText(campo.getText() + "^");
+
 	}
 	
 	@FXML
 	private void resto() {
-		if(!campo.getText().contains("mod"))
-			campo.setText(campo.getText().concat("mod"));
+		
+		if(campo.getText().length() > 0 && campo.getText().charAt( campo.getText().length() - 1 ) != 'm')
+			campo.setText(campo.getText() + "m");
+		
 	}
 	
 }
