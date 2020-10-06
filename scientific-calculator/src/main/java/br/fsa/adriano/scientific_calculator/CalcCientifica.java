@@ -1,5 +1,10 @@
 package br.fsa.adriano.scientific_calculator;
 
+/**
+ * 
+ * @author adriano 737679
+ *
+ */
 public class CalcCientifica {
 	
 	public double seno(double angulo) {		

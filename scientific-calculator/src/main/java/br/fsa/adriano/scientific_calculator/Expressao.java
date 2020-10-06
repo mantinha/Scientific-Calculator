@@ -2,6 +2,11 @@ package br.fsa.adriano.scientific_calculator;
 
 import java.util.regex.Pattern;
 
+/**
+ * 
+ * @author adriano 737679
+ *
+ */
 public class Expressao {
 
 	private String expressaoGeral;

@@ -2,6 +2,11 @@ package br.fsa.adriano.scientific_calculator;
 
 import java.text.DecimalFormat;
 
+/**
+ * 
+ * @author adriano 737679
+ *
+ */
 public class CalcSimples {
 
 	public int somar(int a, int b) {
